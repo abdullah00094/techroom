@@ -51,14 +51,6 @@ export function Footer({ locale }: Props) {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  href={localePath("/blog", locale)}
-                  className="text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition"
-                >
-                  {footer.blog}
-                </Link>
-              </li>
             </ul>
           </div>
 

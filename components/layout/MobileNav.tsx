@@ -6,17 +6,21 @@ import type { Locale } from "@/lib/i18n";
 import { localePath } from "@/lib/i18n";
 import { navLinks } from "@/content/en/navigation";
 import { navLinks as navLinksAr } from "@/content/ar/navigation";
+import { cta as ctaEn } from "@/content/en/common";
+import { cta as ctaAr } from "@/content/ar/common";
 import { whatsappNumber, whatsappMessage } from "@/content/en/navigation";
 import { whatsappMessage as whatsappMessageAr } from "@/content/ar/navigation";
 import { Button } from "@/components/ui/Button";
 
 const navByLocale = { en: navLinks, ar: navLinksAr };
+const ctaByLocale = { en: ctaEn, ar: ctaAr };
 
 type Props = { locale: Locale };
 
 export function MobileNav({ locale }: Props) {
   const [open, setOpen] = useState(false);
   const links = navByLocale[locale];
+  const cta = ctaByLocale[locale];
   const waMsg = locale === "ar" ? whatsappMessageAr : whatsappMessage;
   const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waMsg)}`;
 
@@ -63,10 +67,10 @@ export function MobileNav({ locale }: Props) {
             ))}
             <div className="mt-4 flex flex-col gap-2 border-t border-[var(--card-border)] pt-4">
               <Button href={localePath("/contact", locale)} variant="primary" className="w-full justify-center">
-                {locale === "ar" ? "طلب استشارة مجانية" : "Request Free Consultation"}
+                {cta.requestService}
               </Button>
               <Button href={waUrl} external variant="outline" className="w-full justify-center">
-                {locale === "ar" ? "تواصل عبر واتساب" : "Contact on WhatsApp"}
+                {cta.contactWhatsApp}
               </Button>
             </div>
           </nav>

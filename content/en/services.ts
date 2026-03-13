@@ -2,7 +2,7 @@ export const services = [
   {
     id: "cctv-installation",
     slug: "cctv-installation",
-    title: "CCTV Installation",
+    title: "CCTV / Surveillance Systems",
     shortDescription:
       "Professional surveillance systems that protect your premises 24/7 and give you peace of mind.",
     description:
@@ -48,7 +48,7 @@ export const services = [
   {
     id: "network-setup",
     slug: "network-setup",
-    title: "Network Setup",
+    title: "Network Infrastructure",
     shortDescription:
       "Stable, scalable network infrastructure so your business runs without connectivity issues.",
     description:
@@ -135,6 +135,45 @@ export const services = [
       { q: "What response time do you offer?", a: "We offer different tiers. Typical options include same-day or next-business-day response; critical issues can be prioritized." },
       { q: "Do you support existing software (e.g. medical or accounting)?", a: "We support standard Windows/office environments and common business software. For specialized apps we coordinate with your vendor or train on basics." },
       { q: "Is support remote only or on-site too?", a: "We offer both. Many issues are solved remotely; we can include scheduled or as-needed on-site visits in your plan." },
+    ],
+  },
+  {
+    id: "business-monitoring",
+    slug: "business-monitoring",
+    title: "Business Systems & Monitoring Tools",
+    shortDescription:
+      "Monitoring dashboards and internal tools to track network status, camera systems, and operational alerts.",
+    description:
+      "We develop monitoring dashboards and internal tools that help companies track network status, camera systems, and operational alerts from a single place.",
+    overview:
+      "TechRoom builds monitoring dashboards and internal tools for businesses. These help you track network status, camera systems, and operational alerts so you can see what matters without switching between systems.",
+    problemsSolved: [
+      "No single view of network, cameras, and device status",
+      "Manual checks and no central alerts",
+      "Difficulty tracking what is online or offline",
+      "Scattered tools for different systems",
+    ],
+    whatsIncluded: [
+      "Custom dashboards for your infrastructure",
+      "Network status overview",
+      "Camera and device status tracking",
+      "Alerts and notifications",
+      "Integration with existing systems where possible",
+    ],
+    suitableFor: [
+      "Offices and operations centers",
+      "Multi-site businesses",
+      "Companies with existing CCTV and network infrastructure",
+    ],
+    process: [
+      { step: 1, title: "Discovery", description: "We understand your systems and what you want to monitor." },
+      { step: 2, title: "Design", description: "We propose a dashboard or tool layout and features." },
+      { step: 3, title: "Build & integrate", description: "We build and connect to your infrastructure." },
+      { step: 4, title: "Handover", description: "We train your team and provide support." },
+    ],
+    faq: [
+      { q: "Is this the same as the Smart Monitoring Dashboard?", a: "The Smart Monitoring Dashboard is our upcoming centralized product. We can also build custom monitoring tools for your business today." },
+      { q: "Can it work with our existing cameras and network?", a: "Yes. We integrate with common systems and can adapt to your setup." },
     ],
   },
 ] as const;

@@ -1,23 +1,90 @@
 export const hero = {
-  title: "Secure your business. Keep operations running.",
+  title: "IT Infrastructure, CCTV Security, and Smart Monitoring Solutions for Businesses",
   subtitle:
-    "TechRoom delivers reliable CCTV, network setup, and IT support for businesses in Alexandria. We help clinics, offices, warehouses, and retail operate more securely and efficiently—so you can focus on what matters.",
+    "We help companies secure their facilities, stabilize their networks, and monitor their operations through modern infrastructure and smart monitoring tools.",
 } as const;
 
 export const trustStrip = {
   items: [
     "B2B only — We serve businesses, not individuals",
     "Based in Alexandria, Egypt",
-    "CCTV · Networks · IT Support",
-    "Free consultation & site visit",
+    "Network · CCTV · IT Support · Monitoring",
+    "Request Service · Book Site Visit",
   ],
 } as const;
 
 export const servicesOverview = {
-  title: "What we offer",
+  title: "Our Services",
   subtitle:
-    "Reliable IT infrastructure and security solutions so your business can run with confidence.",
+    "Clear, reliable solutions for your business infrastructure and security. Scan what we offer below.",
   viewAllServices: "View all services",
+} as const;
+
+export const networkInfrastructure = {
+  title: "Network Infrastructure",
+  subtitle: "Technical expertise in business networking.",
+  items: [
+    "Office networking",
+    "Router and switch configuration",
+    "WiFi coverage optimization",
+    "Network troubleshooting",
+    "Business connectivity setup",
+  ],
+} as const;
+
+export const cctvSection = {
+  title: "CCTV & Surveillance Solutions",
+  subtitle: "Security and visibility for your premises.",
+  items: [
+    "Camera installation",
+    "Security monitoring",
+    "Mobile camera access",
+    "Recording systems",
+    "Warehouse and office surveillance",
+  ],
+} as const;
+
+export const businessMonitoringSection = {
+  title: "Business Systems & Monitoring Tools",
+  subtitle:
+    "We develop monitoring dashboards and internal tools that help companies track network status, camera systems, and operational alerts.",
+} as const;
+
+export const smartMonitoringDashboard = {
+  title: "Smart Monitoring Dashboard",
+  subtitle:
+    "A centralized monitoring system that integrates network monitoring, CCTV monitoring, device status tracking, and alerts and notifications.",
+  comingSoon:
+    "Our monitoring dashboard is currently under development and will soon allow clients to monitor their infrastructure and security systems from a centralized interface.",
+} as const;
+
+export const dashboardFeatures = {
+  title: "Dashboard Capabilities",
+  subtitle: "Potential features of the upcoming monitoring system.",
+  features: [
+    { title: "Online / Offline Device Monitoring", icon: "device" },
+    { title: "Camera Access", icon: "camera" },
+    { title: "Alerts & Notifications", icon: "alert" },
+    { title: "Network Status Overview", icon: "network" },
+    { title: "Device Health Monitoring", icon: "health" },
+  ],
+} as const;
+
+export const technologyPartners = {
+  title: "Technology Partners",
+  subtitle: "We work with trusted brands for infrastructure and security.",
+  partners: ["Hikvision", "Cisco", "MikroTik", "TP-Link", "D-Link"],
+} as const;
+
+export const howItWorks = {
+  title: "How It Works",
+  subtitle: "Simple steps from request to support.",
+  steps: [
+    { number: 1, title: "Request Service", description: "Get in touch via form, WhatsApp, or phone." },
+    { number: 2, title: "Site Visit", description: "We visit your location to assess and plan." },
+    { number: 3, title: "Installation", description: "We install and configure your solution." },
+    { number: 4, title: "Monitoring Setup / Support", description: "Ongoing support and monitoring as needed." },
+  ],
 } as const;
 
 export const industriesServed = {
@@ -94,10 +161,20 @@ export const faqSection = {
 } as const;
 
 export const contactSection = {
-  title: "Request a free consultation",
+  title: "Request a Free Consultation",
   subtitle:
-    "Tell us about your business and what you need. We'll get back to you quickly to discuss your project and arrange a site visit if helpful.",
+    "Reach us by WhatsApp, email, or phone—or book a site visit. We'll get back to you quickly.",
   formTitle: "Send us your details",
   formSubtitle:
     "We'll use this to prepare a tailored proposal and contact you.",
+  contactMethods: "Contact methods",
+  whatsApp: "WhatsApp",
+  email: "Email",
+  phone: "Phone",
+  bookSiteVisit: "Book Site Visit",
+} as const;
+
+export const ctaAfterServices = {
+  title: "Ready to get started?",
+  subtitle: "Request a service or book a site visit. We'll respond quickly.",
 } as const;

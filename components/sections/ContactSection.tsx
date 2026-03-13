@@ -1,6 +1,9 @@
+import Link from "next/link";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { ContactForm } from "@/components/forms/ContactForm";
-import { CTAButtons } from "@/components/cta/CTAButtons";
+import { localePath } from "@/lib/i18n";
+import { whatsappNumber, whatsappMessage, contactEmail, contactPhone } from "@/content/en/navigation";
+import { whatsappMessage as whatsappMessageAr } from "@/content/ar/navigation";
 import type { Locale } from "@/lib/i18n";
 import { contactSection as contentEn } from "@/content/en/home";
 import { contactSection as contentAr } from "@/content/ar/home";
@@ -11,21 +14,63 @@ type Props = { locale: Locale };
 
 export function ContactSection({ locale }: Props) {
   const content = contentByLocale[locale];
+  const waMsg = locale === "ar" ? whatsappMessageAr : whatsappMessage;
+  const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waMsg)}`;
 
   return (
     <Section id="contact" alt>
-      <div className={`grid gap-12 lg:grid-cols-2 lg:gap-16 ${locale === "ar" ? "lg:grid-flow-dense" : ""}`}>
-        <div className={locale === "ar" ? "lg:col-start-2" : ""}>
-          <SectionHeader
-            title={content.title}
-            subtitle={content.subtitle}
-            centered={false}
-          />
-          <div className="mt-6">
-            <CTAButtons locale={locale} layout="column" />
-          </div>
+      <SectionHeader
+        title={content.title}
+        subtitle={content.subtitle}
+        centered={true}
+      />
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-10 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-[var(--shadow)]">
+          <h3 className="text-lg font-semibold text-[var(--foreground)]">
+            {content.contactMethods}
+          </h3>
+          <ul className="mt-4 flex flex-wrap gap-4 sm:gap-6">
+            <li>
+              <a
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[var(--muted)] hover:text-[var(--foreground)] transition font-medium"
+              >
+                <span className="text-[#25D366]">WhatsApp</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href={`mailto:${contactEmail}`}
+                className="inline-flex items-center gap-2 text-[var(--muted)] hover:text-[var(--foreground)] transition font-medium"
+              >
+                {content.email}
+              </a>
+            </li>
+            <li>
+              <a
+                href={`tel:${contactPhone.replace(/\s/g, "")}`}
+                className="inline-flex items-center gap-2 text-[var(--muted)] hover:text-[var(--foreground)] transition font-medium"
+              >
+                {content.phone}
+              </a>
+            </li>
+            <li>
+              <Link
+                href={localePath("/contact", locale) + "#site-visit"}
+                className="inline-flex items-center gap-2 text-[var(--muted)] hover:text-[var(--foreground)] transition font-medium"
+              >
+                {content.bookSiteVisit}
+              </Link>
+            </li>
+          </ul>
         </div>
-        <div className={`rounded-[var(--radius-lg)] border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-[var(--shadow)] sm:p-8 ${locale === "ar" ? "lg:col-start-1 lg:row-start-1" : ""}`}>
+
+        <div
+          id="site-visit"
+          className="rounded-[var(--radius-lg)] border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-[var(--shadow)] sm:p-8"
+        >
           <h3 className="text-lg font-semibold text-[var(--foreground)]">
             {content.formTitle}
           </h3>

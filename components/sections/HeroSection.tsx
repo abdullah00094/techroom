@@ -13,15 +13,15 @@ export function HeroSection({ locale }: Props) {
   return (
     <section className="relative overflow-hidden bg-[var(--section-alt)] py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className={`max-w-3xl ${locale === "ar" ? "text-end" : ""}`}>
+        <div className={`max-w-4xl ${locale === "ar" ? "text-end" : ""}`}>
           <h1 className="text-3xl font-bold tracking-tight text-[var(--foreground)] sm:text-4xl lg:text-5xl">
             {hero.title}
           </h1>
-          <p className={`mt-5 text-lg text-[var(--muted)] sm:text-xl ${locale === "ar" ? "text-end" : ""}`}>
+          <p className={`mt-5 text-lg text-[var(--muted)] sm:text-xl leading-relaxed ${locale === "ar" ? "text-end" : ""}`}>
             {hero.subtitle}
           </p>
           <div className={`mt-8 ${locale === "ar" ? "flex justify-end" : ""}`}>
-            <CTAButtons locale={locale} layout="row" />
+            <CTAButtons locale={locale} variant="hero" />
           </div>
         </div>
       </div>

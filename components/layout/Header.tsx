@@ -6,17 +6,21 @@ import type { Locale } from "@/lib/i18n";
 import { localePath } from "@/lib/i18n";
 import { navLinks } from "@/content/en/navigation";
 import { navLinks as navLinksAr } from "@/content/ar/navigation";
+import { cta as ctaEn } from "@/content/en/common";
+import { cta as ctaAr } from "@/content/ar/common";
 import { Button } from "@/components/ui/Button";
 import { MobileNav } from "./MobileNav";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 
 const navByLocale = { en: navLinks, ar: navLinksAr };
+const ctaByLocale = { en: ctaEn, ar: ctaAr };
 
 type Props = { locale: Locale };
 
 export function Header({ locale }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const links = navByLocale[locale];
+  const cta = ctaByLocale[locale];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -58,7 +62,7 @@ export function Header({ locale }: Props) {
             variant="primary"
             className="hidden sm:inline-flex text-sm py-2.5 px-4"
           >
-            {locale === "ar" ? "طلب استشارة مجانية" : "Request Free Consultation"}
+            {cta.requestService}
           </Button>
           <MobileNav locale={locale} />
         </div>
